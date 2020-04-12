@@ -3,6 +3,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+/bin
+*.class
 
 ### STS ###
 .apt_generated
@@ -29,10 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### ADDED BY JILL ###
-.settings
-.project
-.classpath
-bin/
-*.class
