@@ -2,6 +2,11 @@ package g.dbz.cardgame.entity;
 
 import java.util.List;
 
+import g.dbz.cardgame.enumerator.Art;
+import g.dbz.cardgame.enumerator.Color;
+import g.dbz.cardgame.enumerator.Morality;
+import g.dbz.cardgame.enumerator.Species;
+
 public class Character {
 
 	protected String name;
@@ -20,13 +25,34 @@ public class Character {
 	protected Integer spd;
 	protected Integer btlKi;
 //
-	protected String art;
-	protected String color;
-	protected String species;
+	protected Art art;
+	protected Color color;
+	protected Species species;
 	protected List<Move> moves;
 	protected List<Card> cards;
 	protected List<Item> items;
-	protected String morality;
+	protected Morality morality;
+
+	public Character(String name, Integer str, Integer dex, Integer intel, Integer cha, Integer endr, Integer ki,
+			Integer hp, Integer atk, Integer def, Integer spd, Integer btlKi, Art art, Color color, Species species,
+			Morality morality) {
+		this.name = name;
+		this.str = str;
+		this.dex = dex;
+		this.intel = intel;
+		this.cha = cha;
+		this.endr = endr;
+		this.ki = ki;
+		this.hp = hp;
+		this.atk = atk;
+		this.def = def;
+		this.spd = spd;
+		this.btlKi = btlKi;
+		this.art = art;
+		this.color = color;
+		this.species = species;
+		this.morality = morality;
+	}
 
 	public String getName() {
 		return name;
@@ -124,27 +150,27 @@ public class Character {
 		this.btlKi = btlKi;
 	}
 
-	public String getArt() {
+	public Art getArt() {
 		return art;
 	}
 
-	public void setArt(String art) {
+	public void setArt(Art art) {
 		this.art = art;
 	}
 
-	public String getColor() {
-		return color;
-	}
-
-	public String getSpecies() {
+	public Species getSpecies() {
 		return species;
 	}
 
-	public void setSpecies(String species) {
+	public void setSpecies(Species species) {
 		this.species = species;
 	}
 
-	public void setColor(String color) {
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
 		this.color = color;
 	}
 
@@ -172,11 +198,11 @@ public class Character {
 		this.items = items;
 	}
 
-	public String getMorality() {
+	public Morality getMorality() {
 		return morality;
 	}
 
-	public void setMorality(String morality) {
+	public void setMorality(Morality morality) {
 		this.morality = morality;
 	}
 

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.*;
 
 @Controller
-public class GameController {
+public class MenuController {
 
 //FOR COPYPASTE PURPOSES
 //	@RequestMapping("/")
@@ -39,8 +39,4 @@ public class GameController {
 		return new ModelAndView("redirect:/");
 	}
 
-	@RequestMapping("/battle")
-	public ModelAndView battle() {
-		return new ModelAndView("battle");
-	}
 }
