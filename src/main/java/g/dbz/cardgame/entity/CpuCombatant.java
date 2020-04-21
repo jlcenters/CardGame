@@ -2,14 +2,14 @@ package g.dbz.cardgame.entity;
 
 import g.dbz.cardgame.enumerator.*;
 
-public class ComputerCharacter extends Character {
+public class CpuCombatant extends Combatant {
 
 	private Level lvl;
 
 	// TODO: random method which may start the CPU off with an item/items
 	private Boolean equipped;
 
-	public ComputerCharacter(String name, Level lvl, Integer str, Integer dex, Integer intel, Integer cha,
+	public CpuCombatant(String name, Level lvl, Integer str, Integer dex, Integer intel, Integer cha,
 			Integer endr, Integer ki, Integer hp, Integer atk, Integer def, Integer spd, Integer btlKi, Art art,
 			Color color, Species species, Morality morality) {
 		super(name, str, dex, intel, cha, endr, ki, hp, atk, def, spd, btlKi, art, color, species, morality);

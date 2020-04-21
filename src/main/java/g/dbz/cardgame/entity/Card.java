@@ -1,15 +1,22 @@
 package g.dbz.cardgame.entity;
 
+import g.dbz.cardgame.enumerator.*;
+
 public class Card {
 
-	private String type;
+	private CardType type;
 	private Boolean activated;
 
-	public String getType() {
+	public Card(CardType type) {
+		this.type = type;
+		activated = false;
+	}
+
+	public CardType getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(CardType type) {
 		this.type = type;
 	}
 

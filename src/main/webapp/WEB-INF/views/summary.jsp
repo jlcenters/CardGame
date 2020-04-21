@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Main Menu</title>
+<title>SUMMARY</title>
 </head>
 <body>
-	<h1>You've met with a terrible fate, haven't you?</h1>
 
-	<a href="/battle">Fight!</a>
-	<a href="/login">Returning Players</a>
-	<br>
-	<a href="/create">New Players</a>
+	<!-- FASTEST -->
+	<!-- STATUS -->
+	<!-- SLOWEST -->
+	<!-- STATUS -->
+	<a href="/battle"><button>NEXT PHASE</button></a>
 </body>
 </html>

@@ -2,12 +2,12 @@ package g.dbz.cardgame.entity;
 
 import g.dbz.cardgame.enumerator.*;
 
-public class PlayerCharacter extends Character {
+public class PlayerCombatant extends Combatant {
 
-	// private User userCreator;
+	// TODO: private User userCreator;
 	private Long xp;
 
-	public PlayerCharacter(String name, Long xp, Integer str, Integer dex, Integer intel, Integer cha, Integer endr,
+	public PlayerCombatant(String name, Long xp, Integer str, Integer dex, Integer intel, Integer cha, Integer endr,
 			Integer ki, Integer hp, Integer atk, Integer def, Integer spd, Integer btlKi, Art art, Color color,
 			Species species, Morality morality) {
 		super(name, str, dex, intel, cha, endr, ki, hp, atk, def, spd, btlKi, art, color, species, morality);

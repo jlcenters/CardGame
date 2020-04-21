@@ -1,13 +1,9 @@
 package g.dbz.cardgame.entity;
 
 import java.util.List;
+import g.dbz.cardgame.enumerator.*;
 
-import g.dbz.cardgame.enumerator.Art;
-import g.dbz.cardgame.enumerator.Color;
-import g.dbz.cardgame.enumerator.Morality;
-import g.dbz.cardgame.enumerator.Species;
-
-public class Character {
+public class Combatant {
 
 	protected String name;
 // SDICE
@@ -25,6 +21,7 @@ public class Character {
 	protected Integer spd;
 	protected Integer btlKi;
 //
+//CHARACTER STATS
 	protected Art art;
 	protected Color color;
 	protected Species species;
@@ -33,7 +30,8 @@ public class Character {
 	protected List<Item> items;
 	protected Morality morality;
 
-	public Character(String name, Integer str, Integer dex, Integer intel, Integer cha, Integer endr, Integer ki,
+//
+	public Combatant(String name, Integer str, Integer dex, Integer intel, Integer cha, Integer endr, Integer ki,
 			Integer hp, Integer atk, Integer def, Integer spd, Integer btlKi, Art art, Color color, Species species,
 			Morality morality) {
 		this.name = name;

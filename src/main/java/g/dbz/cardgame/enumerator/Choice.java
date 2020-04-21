@@ -1,0 +1,18 @@
+package g.dbz.cardgame.enumerator;
+
+public enum Choice {
+
+//PHASE 1
+	DRAW, CHARGE, DAMAGE,
+//
+//PHASE 2
+	ACTIVATE, USE, NOTHING,
+//
+//PHASE 3
+	QUICK, HEAVY, KI, RUSH, BLOCK, DODGE, COUNTER, BURST, OBSERVE, TRUECHARGE, TAUNT, TRANSFORM,
+//
+//ALL
+	ESCAPE;
+//
+
+}
