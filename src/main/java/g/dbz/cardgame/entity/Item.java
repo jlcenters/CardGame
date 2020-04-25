@@ -3,8 +3,8 @@ package g.dbz.cardgame.entity;
 public class Item {
 
 	private String name;
-	private Boolean passiveAbility;
-	private Boolean consumableAbility;
+	private String passiveAbility;
+	private String consumableAbility;
 
 	public String getName() {
 		return name;
@@ -14,19 +14,19 @@ public class Item {
 		this.name = name;
 	}
 
-	public Boolean getPassiveAbility() {
+	public String getPassiveAbility() {
 		return passiveAbility;
 	}
 
-	public void setPassiveAbility(Boolean passiveAbility) {
+	public void setPassiveAbility(String passiveAbility) {
 		this.passiveAbility = passiveAbility;
 	}
 
-	public Boolean getConsumableAbility() {
+	public String getConsumableAbility() {
 		return consumableAbility;
 	}
 
-	public void setConsumableAbility(Boolean consumableAbility) {
+	public void setConsumableAbility(String consumableAbility) {
 		this.consumableAbility = consumableAbility;
 	}
 

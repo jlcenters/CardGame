@@ -1,10 +1,12 @@
 package g.dbz.cardgame.method;
 
-import g.dbz.cardgame.entity.Combatant;
+import java.util.*;
+import g.dbz.cardgame.entity.*;
+import g.dbz.cardgame.enumerator.*;
 
 public class Checks {
 
-	// TODO: FASTEST/HP/WIN OR LOSS/ESCAPE SUCCESS
+	// TODO: FASTEST/WIN OR LOSS/ESCAPE SUCCESS
 
 	public static String checkPhase(int phase) {
 		if (phase == 1) {
@@ -17,23 +19,57 @@ public class Checks {
 		}
 	}
 
-	public void checkFastest() {
+	public static boolean checkEscape(Combatant p1, Attribute choice1, Combatant p2, Attribute choice2) {
+		// TODO: each failed escape cuts chances in half; opponent less than
+		// 20% HP, +1 to player's roll
 
-	}
+		List<Integer> rolls = Dice.rollD6(2);
+		int roll1 = rolls.indexOf(0);
+		int roll2 = rolls.indexOf(1);
 
-	public static boolean checkHp(Combatant combatant) {
-		if (combatant.getHp() <= 0) {
+		if (choice1.equals(choice2)) {
+			roll1 = roll1 / 2;
+		}
+		modify(p1, choice1, roll1);
+		modify(p2, choice2, roll2);
+
+		if (roll1 > roll2) {
+			return true;
+		} else if (roll1 < roll2) {
 			return false;
 		} else {
-			return true;
+			if (Dice.coinToss()) {
+				return true;
+			} else {
+				return false;
+			}
 		}
+
 	}
 
-	public static boolean checkWin() {
-		return false;
-	}
+	public static void modify(Combatant combatant, Attribute attribute, int roll) {
+		int mod = 0;
 
-	public static boolean checkEscape() {
-		return false;
+		switch (attribute) {
+		case STR:
+			mod = (int) (combatant.getStr() * .15);
+			break;
+		case DEX:
+			mod = (int) (combatant.getDex() * .15);
+			break;
+		case INTEL:
+			mod = (int) (combatant.getIntel() * .15);
+			break;
+		case CHA:
+			mod = (int) (combatant.getCha() * .15);
+			break;
+		case ENDR:
+			mod = (int) (combatant.getEndr() * .15);
+			break;
+		case KI:
+			mod = (int) (combatant.getKi() * .15);
+			break;
+		}
+		roll += mod;
 	}
 }

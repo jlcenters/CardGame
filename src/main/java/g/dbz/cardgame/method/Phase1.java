@@ -33,26 +33,38 @@ public class Phase1 {
 		int maxKi = combatant.getKi() * 10;
 
 		if (die == 1) {
+			if ((currentKi + 5) <= (maxKi)) {
+				combatant.setBtlKi(currentKi + 5);
+			} else {
+				combatant.setBtlKi(maxKi);
+			}
+		} else if (die == 2) {
+			if ((currentKi + 10) <= (maxKi)) {
+				combatant.setBtlKi(currentKi + 10);
+			} else {
+				combatant.setBtlKi(maxKi);
+			}
+		} else if (die == 3) {
 			if ((currentKi + 15) <= (maxKi)) {
 				combatant.setBtlKi(currentKi + 15);
 			} else {
 				combatant.setBtlKi(maxKi);
 			}
-		} else if (die == 2) {
-			if ((currentKi + 30) <= (maxKi)) {
-				combatant.setBtlKi(currentKi + 30);
+		} else if (die == 4) {
+			if ((currentKi + 20) <= (maxKi)) {
+				combatant.setBtlKi(currentKi + 20);
 			} else {
 				combatant.setBtlKi(maxKi);
 			}
-		} else if (die < 6) {
-			if ((currentKi + 45) <= (maxKi)) {
-				combatant.setBtlKi(currentKi + 45);
+		} else if (die == 5) {
+			if ((currentKi + 25) <= (maxKi)) {
+				combatant.setBtlKi(currentKi + 25);
 			} else {
 				combatant.setBtlKi(maxKi);
 			}
 		} else {
-			if ((currentKi + 60) <= (maxKi)) {
-				combatant.setBtlKi(currentKi + 60);
+			if ((currentKi + 30) <= (maxKi)) {
+				combatant.setBtlKi(currentKi + 30);
 			} else {
 				combatant.setBtlKi(maxKi);
 			}

@@ -1,6 +1,5 @@
 package g.dbz.cardgame.controller;
 
-import java.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,6 +28,7 @@ public class BattleController {
 	public ModelAndView battle(Choice choice) {
 
 		ModelAndView mv = new ModelAndView("summary");
+		// FASTEST FIRST
 		choose(choice);
 
 		return mv;
@@ -40,22 +40,28 @@ public class BattleController {
 		switch (choice) {
 		// PHASE 1
 		case DRAW:
-			List<Card> pCards = player.getCards();
-			Phase1.draw(pCards);
-			player.setCards(pCards);
+			System.out.println("Card Drawn!");
+			Phase1.draw(player.getCards());
 			break;
 		case CHARGE:
+			System.out.println(player.getName() + " charged their ki!");
 			Phase1.charge(player);
 			break;
 		case DAMAGE:
+			System.out.println(player.getName() + " damaged " + cpu.getName() + ".");
 			Phase1.damage(cpu);
 			break;
 		// PHASE 2
 		case ACTIVATE:
+			System.out.println("Card Activated!");
+			Phase2.activateCard(player, new Card(CardType.CHARGE));
 			break;
 		case USE:
+			System.out.println("Item Used!");
+			Phase2.useItem();
 			break;
 		case NOTHING:
+			System.out.println("Nothing could be done.");
 			break;
 		// PHASE 3
 		case QUICK:
@@ -84,7 +90,10 @@ public class BattleController {
 			break;
 		// ANY TIME
 		case ESCAPE:
+			if (Checks.checkEscape(player, Attribute.INTEL, cpu, Attribute.DEX)) {
+			}
 			break;
 		}
+
 	}
 }
